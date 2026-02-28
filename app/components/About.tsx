@@ -1,3 +1,10 @@
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+
 export default function About() {
   const experience = [
     {
@@ -65,39 +72,47 @@ export default function About() {
   ];
 
   return (
-    <section className="py-16 md:py-24">
-      <h2 className="text-2xl font-bold tracking-tight md:text-3xl">About</h2>
-      <p className="mt-4 text-zinc-600 dark:text-zinc-400">
-        MIPT (Applied Mathematics and Physics, Master&apos;s 2017). ICAgile Certified
-        Professional (ICP), 2021. Russian (native), English (B2).
+    <section>
+      <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+        About
+      </h2>
+      <p className="mt-4 text-muted-foreground">
+        MIPT (Applied Mathematics and Physics, Master&apos;s 2017). ICAgile
+        Certified Professional (ICP), 2021. Russian (native), English (B2).
       </p>
 
-      <h3 className="mt-10 text-xl font-semibold">Experience</h3>
+      <h3 className="mt-12 text-lg font-semibold text-foreground">
+        Experience
+      </h3>
       <ul className="mt-4 space-y-6">
         {experience.map((job) => (
           <li key={`${job.company}-${job.period}`}>
-            <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:gap-2">
-              <span className="font-medium">{job.company}</span>
-              <span className="text-sm text-zinc-500">{job.period}</span>
-            </div>
-            <p className="text-sm font-medium text-zinc-600 dark:text-zinc-400">
-              {job.role}
-            </p>
-            <p className="mt-1 text-zinc-600 dark:text-zinc-400">
-              {job.description}
-            </p>
+            <Card>
+              <CardHeader className="flex flex-row flex-wrap items-baseline justify-between gap-2">
+                <CardTitle>{job.company}</CardTitle>
+                <span className="text-sm text-muted-foreground">{job.period}</span>
+              </CardHeader>
+              <CardContent className="pt-0">
+                <p className="text-sm font-medium text-muted-foreground">
+                  {job.role}
+                </p>
+                <p className="mt-2 text-muted-foreground">{job.description}</p>
+              </CardContent>
+            </Card>
           </li>
         ))}
       </ul>
 
-      <h3 className="mt-10 text-xl font-semibold">Skills</h3>
-      <ul className="mt-4 space-y-3">
+      <h3 className="mt-12 text-lg font-semibold text-foreground">Skills</h3>
+      <ul className="mt-4 space-y-2">
         {skillGroups.map((group) => (
           <li key={group.title}>
-            <span className="font-medium">{group.title}:</span>{" "}
-            <span className="text-zinc-600 dark:text-zinc-400">
-              {group.skills}
-            </span>
+            <Card>
+              <CardContent className="py-4">
+                <span className="font-medium text-foreground">{group.title}:</span>{" "}
+                <span className="text-muted-foreground">{group.skills}</span>
+              </CardContent>
+            </Card>
           </li>
         ))}
       </ul>
