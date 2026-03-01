@@ -9,13 +9,13 @@ export default function Contact() {
 
   return (
     <section>
-      <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+      <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
         Contact
       </h2>
       <ul className="mt-6 flex flex-wrap gap-3">
         {links.map((link) => (
           <li key={link.label}>
-            <Button asChild variant="outline">
+            <Button asChild variant="outline" className="border-white/20 bg-white/5 text-white hover:bg-white/10 hover:text-white">
               <a
                 href={link.href}
                 target={link.label === "Email" ? undefined : "_blank"}

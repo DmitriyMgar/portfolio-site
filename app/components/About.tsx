@@ -73,44 +73,44 @@ export default function About() {
 
   return (
     <section>
-      <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+      <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
         About
       </h2>
-      <p className="mt-4 text-muted-foreground">
+      <p className="mt-4 text-white/70">
         MIPT (Applied Mathematics and Physics, Master&apos;s 2017). ICAgile
         Certified Professional (ICP), 2021. Russian (native), English (B2).
       </p>
 
-      <h3 className="mt-12 text-lg font-semibold text-foreground">
+      <h3 className="mt-12 text-lg font-semibold text-white">
         Experience
       </h3>
       <ul className="mt-4 space-y-6">
         {experience.map((job) => (
           <li key={`${job.company}-${job.period}`}>
-            <Card>
+            <Card className="bg-white/5 backdrop-blur-sm border-white/10">
               <CardHeader className="flex flex-row flex-wrap items-baseline justify-between gap-2">
-                <CardTitle>{job.company}</CardTitle>
-                <span className="text-sm text-muted-foreground">{job.period}</span>
+                <CardTitle className="text-white">{job.company}</CardTitle>
+                <span className="text-sm text-white/60">{job.period}</span>
               </CardHeader>
               <CardContent className="pt-0">
-                <p className="text-sm font-medium text-muted-foreground">
+                <p className="text-sm font-medium text-white/70">
                   {job.role}
                 </p>
-                <p className="mt-2 text-muted-foreground">{job.description}</p>
+                <p className="mt-2 text-white/60">{job.description}</p>
               </CardContent>
             </Card>
           </li>
         ))}
       </ul>
 
-      <h3 className="mt-12 text-lg font-semibold text-foreground">Skills</h3>
+      <h3 className="mt-12 text-lg font-semibold text-white">Skills</h3>
       <ul className="mt-4 space-y-2">
         {skillGroups.map((group) => (
           <li key={group.title}>
-            <Card>
+            <Card className="bg-white/5 backdrop-blur-sm border-white/10">
               <CardContent className="py-4">
-                <span className="font-medium text-foreground">{group.title}:</span>{" "}
-                <span className="text-muted-foreground">{group.skills}</span>
+                <span className="font-medium text-white">{group.title}:</span>{" "}
+                <span className="text-white/70">{group.skills}</span>
               </CardContent>
             </Card>
           </li>
